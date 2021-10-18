@@ -1,0 +1,3 @@
+2. Two’s complement Why use two’s complement to represent negative numbers?
+
+Using 2s complement is the most efficient way to represent signed integers in hardware.  2s complement.  Plus, it is easier to implement using 2n calculations.  Other methods introduce more complexity, for example, 1s complement has two ways of representing 0 (+0 and -0).
