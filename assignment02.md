@@ -91,13 +91,13 @@ b) Explain why the counter value has changed?
 7. Change the setting of IAR to run the same program on the evaluation board:
 a) What is the address where “counter” is stored?
 
-    
+    0x20000000
 
 b) Is the “counter” variable stored in RAM or ROM?
 
-    
+    RAM
     
 c) What is the value of “counter” at the end of the program (halting at the return 0 statement).
 
-    
+    4
 
