@@ -31,20 +31,43 @@ b) Please note down which are set in the APSR register. And explain why.
 
 3. Change the “counter” variable type in your code to “unsigned int”. Inject the values “0x7FFFFFFF” then step thru the program to increment the “counter” once:
 a) What is the value of “counter” in the “Locals” window after incrementing for each value?
+
+        0xFFFFFFFF
+        
 b) Please note down which flags are set in the APSR register. And explain why.
 
+        None are set because the operation incremented nominally.
 
 4. Change the “counter” variable type in your code to “unsigned”. Inject the values “0xFFFFFFFF” then step thru the program to increment the “counter” once:
 a) What is the value of “counter” in the “Locals” window after incrementing for each value?
+
+        0x00000000
+
 b) Please note down which are set in the APSR register. And explain why.
+
+        Z - Zero condition flag
+            the previous value had all bits high, so this increment rolled the counter over.
+            
+        C - Carry condition flag
+            with all the bits set adding a 1 causes a carry operation.
 
 
 5. Move the “counter’ variable outside of main (at the top of the file):
 a) What is the scope of the variable “counter”?
+    
+    The variable is now global and accessible by any function in file.
+    
 b) Is it still visible in the “Locals” view?
+
+    No.
+
 c) In which window view can we track “counter” now?
+
+    We can track it in the Watch window.
+
 d) What is the address of the “counter” variable in memory?
 
+    0x20000000
 
 6. Change the source code to the following, then run the program in the simulator:
 a) What is the value of “counter” at the end of the program (halting at the return 0 statement)
