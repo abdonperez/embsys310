@@ -70,20 +70,34 @@ d) What is the address of the “counter” variable in memory?
     0x20000000
 
 6. Change the source code to the following, then run the program in the simulator:
+        int counter = 0x0;
+        int main() {
+            int *p_int = (int *)0x20000000;
+            ++(*p_int);
+            ++(*p_int);
+            ++(*p_int);
+            counter ++;
+            return 0;
+        }
+
 a) What is the value of “counter” at the end of the program (halting at the return 0 statement)
+
+    4
+
 b) Explain why the counter value has changed?
 
+    The value has changed because the operation is incrementing the value in that register address.
 
 7. Change the setting of IAR to run the same program on the evaluation board:
-int counter = 0x0;
-int main() {
-int *p_int = (int *)0x20000000;
-++(*p_int);
-++(*p_int);
-++(*p_int);
-counter ++;
-return 0;
-}
 a) What is the address where “counter” is stored?
+
+    
+
 b) Is the “counter” variable stored in RAM or ROM?
+
+    
+    
 c) What is the value of “counter” at the end of the program (halting at the return 0 statement).
+
+    
+
