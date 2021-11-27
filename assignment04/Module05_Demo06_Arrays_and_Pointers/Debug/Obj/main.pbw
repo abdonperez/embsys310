@@ -1,0 +1,226 @@
+[
+  {
+    "ID": "c:@myInt",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "myInt",
+    "location": {
+      "column": "5",
+      "line": "1",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "myInt",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@myIntArray",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "myIntArray",
+    "location": {
+      "column": "5",
+      "line": "2",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "myIntArray",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@myCharArray",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "myCharArray",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "myCharArray",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@myString",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "myString",
+    "location": {
+      "column": "7",
+      "line": "4",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "myString",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@myIntPtr",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "myIntPtr",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "myIntPtr",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getIncorrectArraySize",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int getIncorrectArraySize(char *)",
+    "location": {
+      "column": "5",
+      "line": "8",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "getIncorrectArraySize",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "10",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@263@F@main@pInt",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "pInt",
+    "location": {
+      "column": "10",
+      "line": "13",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "pInt",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@360@F@main@pChar",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "pChar",
+    "location": {
+      "column": "11",
+      "line": "16",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "pChar",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@697@F@main@numberOfCharElements",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "numberOfCharElements",
+    "location": {
+      "column": "9",
+      "line": "30",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "numberOfCharElements",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@773@F@main@numberOfElements",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "numberOfElements",
+    "location": {
+      "column": "9",
+      "line": "31",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "numberOfElements",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@1132@F@main@myCharArray2",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "myCharArray2",
+    "location": {
+      "column": "10",
+      "line": "43",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "myCharArray2",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@1187@F@main@myCharPtr2",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "myCharPtr2",
+    "location": {
+      "column": "11",
+      "line": "44",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "myCharPtr2",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@1227@F@main@size3",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "size3",
+    "location": {
+      "column": "9",
+      "line": "46",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "size3",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@1286@F@main@size4",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "size4",
+    "location": {
+      "column": "9",
+      "line": "47",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "size4",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getIncorrectArraySize",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int getIncorrectArraySize(char *)",
+    "location": {
+      "column": "5",
+      "line": "52",
+      "path": "C:\\Users\\apere\\OneDrive\\Documents\\GitHub\\embsys310\\assignment04\\Module05_Demo06_Arrays_and_Pointers\\main.c"
+    },
+    "name": "getIncorrectArraySize",
+    "origin": "project_file",
+    "scope": null
+  }
+]
