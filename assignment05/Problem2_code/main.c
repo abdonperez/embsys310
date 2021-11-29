@@ -69,7 +69,7 @@ int fah_to_cel_asm(int temperature);
 /* USER CODE BEGIN 0 */
 
 // Change [My name] to your name      //
-uint8_t myTxData[] = "EMBSYS310: UW Test Application - [My Name]'s STM32L475 IoT node is alive!!!\r\n";
+uint8_t myTxData[] = "EMBSYS310: UW Test Application - Abdon's STM32L475 IoT node is alive!!!\r\n";
 uint8_t endOfProgram[] = "\n******** THE END ******** \r\n";
 
 /* USER CODE END 0 */
@@ -111,11 +111,10 @@ int main(void)
     /* USER CODE BEGIN WHILE */
     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 
-    uint8_t counter = 20;
-    //uint8_t sqrResult;
+    uint8_t counter = 100;
     uint8_t divResult;
 
-    HAL_UART_Transmit(&huart1, myTxData, sizeof(myTxData), 20);
+    HAL_UART_Transmit(&huart1, myTxData, sizeof(myTxData), 100);
 
     while (counter)
     {
@@ -126,71 +125,21 @@ int main(void)
         PrintString("\nx = ");
         Print_uint32(counter);
 
-//        sqrResult = sqrAsm(counter);
-//        PrintString(" x^2 = ");
-//        Print_uint32(sqrResult);
-
         divResult = divAsm(counter);
-        PrintString(" x/2 = ");
+        PrintString(" x/5 = ");
         Print_uint32(divResult);
-        PrintString("\n");
-        counter--;
+        counter = counter - 10;
 
         HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
         HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
 
         HAL_Delay(1000);
     }
-    
-    //PrintString(*myCstr);
-    
-    // Testing fah_to_cel_asm
-    int tempC;
-    PrintString("\n********** Fahrenheit to Celsius **********\n");
-    
-    for(uint32_t tempF=0; tempF <= 100; tempF++)
-    {
-        tempC = fah_to_cel_asm(tempF);
-        RETAILMSG(1, ("\t%d Fahrenheit = %d Celsius\r\n", tempF, tempC));
-    }
-    
+       
     HAL_UART_Transmit(&huart1, endOfProgram, sizeof(endOfProgram), 10);
 
     /* USER CODE END 3 */
 }
-
-#if 0
-
-int fah_to_cel_asm(int temperature)
-{
-    // Formula:
-    // Subtract 32, then multiply by 5, then divide by 9
-    // EX: (50F - 32) x 5/9 = 10C
-    
-    asm("SUB R0, R0, #32\n"
-        "MOV R1, #5\n"
-        "MUL R0, R0, R1\n"
-        "MOV R2, #9\n"
-        "SDIV R0, R0, R2\n"
-        );
-    
-    return temperature;
-}
-#endif
-
-#if 1
-int fah_to_cel_asm(int temp)
-{
-    // Deduct 32, then multiply by 5, then divide by 9
-    asm("SUB R0, R0, #32");
-    asm("MOV R1, #5");
-    asm("MUL R0, R0, R1");
-    asm("MOV R2, #9");
-    asm("SDIV R0, R0, R2");
-
-    return temp;
-}
-#endif
 
 /**
   * @brief System Clock Configuration

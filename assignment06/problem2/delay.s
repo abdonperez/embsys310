@@ -1,19 +1,15 @@
 /*******************************************************************************
-File name       : divAsm.s
-Description     : Assembly language function for square
+File name       : delay.s
+Description     : Assembly language function for controlling the user LED
 *******************************************************************************/   
 
-    EXTERN PrintString  // PrintString is defined outside this file.
-    EXTERN myCstr       // myCstr defined outside this file.
-    
-    PUBLIC divAsm       // Exports symbols to other modules
-                        // Making divAsm available to other modules.
-    
+    PUBLIC delay         // Exports symbols to other modules
+
 // Code is split into logical sections using the SECTION directive.
 // Source: http://ftp.iar.se/WWWfiles/arm/webic/doc/EWARM_AssemblerReference.ENU.pdf
 // SECTION  section  :type [:flag] [(align)]
 //      The data section is used for declaring initialized data or constants. This data does not change at runtime
-//      The bss section is used for declaring variables.
+//      The bss section is used for declaring variables. The syntax for declaring bss section is -
 //      The text section is used for keeping the actual code.
 
 // CODE: Interprets subsequent instructions as Arm or Thumb instructions, 
@@ -21,7 +17,6 @@ Description     : Assembly language function for square
 
 // NOREORDER (the default mode) starts a new fragment in the section
 // with the given name, or a new section if no such section exists.
-
 // REORDER starts a new section with the given name.
 
 // NOROOT means that the section fragment is discarded by the linker if
@@ -40,23 +35,16 @@ Description     : Assembly language function for square
                         // Subsequent instructions are assembled as THUMB instructions
     
 /*******************************************************************************
-Function Name   : divAsm
-Description     : Calls C code to print a string; 
-                  computes the divedend of its input argument
-C Prototype     : int divAsm(val)
-                : Where val is the value to calculate it's divedend
-Parameters      : R0: integer val
-Return value    : R0
+Function Name   : delay
+Description     : loops until input value reaches 0, then exits
+
+C Prototype     : void delay(uint8_t duration)
+                : Where duration indicates the total number of loops.
+Parameters      : R0: uint8_t duration
+Return value    : None
 *******************************************************************************/  
   
-divAsm
-    PUSH {R0,LR}        // save the input argument and return address
-    LDR R0,=myCstr      // load (global) address of address of string into R0
-    LDR R0,[R0]         // load address of string into R0
-    BL  PrintString     // call PrintString to print the string
-    POP {R0,LR}         // Restore R0 and LR
-    MOV R1, #5          // R1 = 5
-    SDIV R0, R0, R1      // R0 = R0 / R1 (which equals 5) 
-    BX LR               // return (with function result in R0)
+delay
+    // <TODO> Implement function in assembly
 
     END
