@@ -1,0 +1,218 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  05/Dec/2021  12:52:21
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        F:\School\Module08_Demo19_Interrupts_SysTick\Debug\Exe\main.out
+#    Map file     =
+#        F:\School\Module08_Demo19_Interrupts_SysTick\Debug\List\main.map
+#    Command line =
+#        -f C:\Users\apere\AppData\Local\Temp\EW3826.tmp
+#        (F:\School\Module08_Demo19_Interrupts_SysTick\Debug\Obj\delay.o
+#        F:\School\Module08_Demo19_Interrupts_SysTick\Debug\Obj\main.o
+#        F:\School\Module08_Demo19_Interrupts_SysTick\Debug\Obj\startup_stm32l475xx.o
+#        --no_out_extension -o
+#        F:\School\Module08_Demo19_Interrupts_SysTick\Debug\Exe\main.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map F:\School\Module08_Demo19_Interrupts_SysTick\Debug\List\main.map
+#        --config F:\School\Module08_Demo19_Interrupts_SysTick\main.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x0] |
+                [from 0x800'0000 to 0x80f'ffff] { ro };
+define block CSTACK with size = 8264, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 0, alignment = 8 { };
+"P3":  place in [from 0x2000'0000 to 0x2001'7fff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P5"
+  rw section application_specific_rw  in "P2|P5"
+  section .textrw                     in "P4"
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            const     0x800'0000    0x40  startup_stm32l475xx.o [1]
+                             - 0x800'0040    0x40
+
+"P1":                                       0x178
+  .text              ro code   0x800'0040    0x70  main.o [1]
+  .text              ro code   0x800'00b0     0xe  delay.o [1]
+  .text              ro code   0x800'00be    0x2e  copy_init3.o [4]
+  .text              ro code   0x800'00ec    0x28  data_init.o [4]
+  .text              ro code   0x800'0114    0x22  fpinit_M.o [3]
+  .iar.init_table    const     0x800'0138    0x14  - Linker created -
+  .text              ro code   0x800'014c    0x1e  cmain.o [4]
+  .text              ro code   0x800'016a     0x4  low_level_init.o [2]
+  .text              ro code   0x800'016e     0x4  exit.o [2]
+  .text              ro code   0x800'0174     0xa  cexit.o [4]
+  .text              ro code   0x800'0180    0x14  exit.o [5]
+  .text              ro code   0x800'0194    0x12  startup_stm32l475xx.o [1]
+  .text              ro code   0x800'01a6     0xc  cstartup_M.o [4]
+  .rodata            const     0x800'01b2     0x0  copy_init3.o [4]
+  Initializer bytes  const     0x800'01b4     0x4  <for P3 s0>
+                             - 0x800'01b8   0x178
+
+"P3", part 1 of 2:                            0x4
+  P3 s0                       0x2000'0000     0x4  <Init block>
+    .data            inited   0x2000'0000     0x4  main.o [1]
+                            - 0x2000'0004     0x4
+
+"P3", part 2 of 2:                         0x2048
+  CSTACK                      0x2000'0008  0x2048  <Block>
+    CSTACK           uninit   0x2000'0008  0x2048  <Block tail>
+                            - 0x2000'2050  0x2048
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+          0x0          0x0       0x1
+   0x800'01b8   0x80f'ffff  0xf'fe48
+  0x2000'0004  0x2000'0007       0x4
+  0x2000'2050  0x2001'7fff  0x1'5fb0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+           0x800'01b4   0x4
+    1 destination range, total size 0x4:
+          0x2000'0000   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+command line/config:
+    ------------------------------------------------
+    Total:
+
+F:\School\Module08_Demo19_Interrupts_SysTick\Debug\Obj: [1]
+    delay.o                     14
+    main.o                     112        4        4
+    startup_stm32l475xx.o       18       64
+    ------------------------------------------------
+    Total:                     144       68        4
+
+dl7M_tln.a: [2]
+    exit.o                       4
+    low_level_init.o             4
+    ------------------------------------------------
+    Total:                       8
+
+m7M_tls.a: [3]
+    fpinit_M.o                  34
+    ------------------------------------------------
+    Total:                      34
+
+rt7M_tl.a: [4]
+    cexit.o                     10
+    cmain.o                     30
+    copy_init3.o                46
+    cstartup_M.o                12
+    data_init.o                 40
+    ------------------------------------------------
+    Total:                     138
+
+shb_l.a: [5]
+    exit.o                      20
+    ------------------------------------------------
+    Total:                      20
+
+    Gaps                         4        2
+    Linker created                       22    8'264
+----------------------------------------------------
+    Grand Total:               348       92    8'268
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base    0x800'0138         --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'014c         --   Gb  - Linker created -
+?main                    0x800'014d        Code  Gb  cmain.o [4]
+BusFault_Handler         0x800'01a1   0x2  Code  Gb  startup_stm32l475xx.o [1]
+CSTACK$$Base            0x2000'0008         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2050         --   Gb  - Linker created -
+HardFault_Handler        0x800'0197   0x8  Code  Gb  startup_stm32l475xx.o [1]
+MemManage_Handler        0x800'019f   0x2  Code  Gb  startup_stm32l475xx.o [1]
+NMI_Handler              0x800'0195   0x2  Code  Gb  startup_stm32l475xx.o [1]
+Region$$Table$$Base      0x800'0138         --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'014c         --   Gb  - Linker created -
+SysTick_Handler          0x800'0085  0x14  Code  Gb  main.o [1]
+SysTick_Initialize       0x800'006f  0x16  Code  Gb  main.o [1]
+Unused_Handler           0x800'01a5   0x2  Code  Gb  startup_stm32l475xx.o [1]
+UsageFault_Handler       0x800'01a3   0x2  Code  Gb  startup_stm32l475xx.o [1]
+__cmain                  0x800'014d        Code  Gb  cmain.o [4]
+__exit                   0x800'0181  0x14  Code  Gb  exit.o [5]
+__iar_copy_init3         0x800'00bf  0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3         0x800'00ed  0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp           0x800'0115        Code  Gb  fpinit_M.o [3]
+__iar_program_start      0x800'01a7        Code  Gb  cstartup_M.o [4]
+__low_level_init         0x800'016b   0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000  0x40  Data  Gb  startup_stm32l475xx.o [1]
+_call_main               0x800'0159        Code  Gb  cmain.o [4]
+_exit                    0x800'0175        Code  Gb  cexit.o [4]
+_main                    0x800'0167        Code  Gb  cmain.o [4]
+delay                    0x800'00b1   0xe  Code  Gb  delay.o [1]
+exit                     0x800'016f   0x4  Code  Gb  exit.o [2]
+globalTimeToggle        0x2000'0000   0x4  Data  Gb  main.o [1]
+main                     0x800'0041  0x2e  Code  Gb  main.o [1]
+
+
+[1] = F:\School\Module08_Demo19_Interrupts_SysTick\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+    348 bytes of readonly  code memory
+     92 bytes of readonly  data memory
+  8'268 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
