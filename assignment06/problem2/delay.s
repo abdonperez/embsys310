@@ -45,6 +45,16 @@ Return value    : None
 *******************************************************************************/  
   
 delay
-    // <TODO> Implement function in assembly
+        PUSH {R4}
+        MOVS R4, R1 
+delayloop
+	CMP  R4, #0
+	BEQ  returnval
+	SUB  R4, R4, #1
+	B    delayloop
+returnval
+	POP {R4}
+        BX LR
+        
+        END
 
-    END

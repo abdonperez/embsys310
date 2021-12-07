@@ -55,6 +55,22 @@ GPIOA_ODR   EQU 0x14
 GPIOA_BIT_5 EQU 0x20
 
 control_user_led1
-    // <TODO> Implement function in assembly
-
+    PUSH {R5, LR}       // PUSH R5&LR to stack for delay() call below
+    CMP  R0, #1     // Check for On call
+    BEQ  turn_on    // Branch to On code
+    LDR  R3, =GPIOA_BASE+GPIOA_ODR // store address of GPIOA
+    LDR  R5, [R3]
+    AND  R5, R5, #0x0 // load zero for Off
+    STR  R5, [R3]     // Turn LED Off
+    B    delay_call // Branch to delay function
+turn_on:
+    LDR  R3, =GPIOA_BASE+GPIOA_ODR // store address value of GPIOA
+    LDR  R5, [R3]  // Load register R5 w/ address of R3
+    ORR  R5, R5, #GPIOA_BIT_5  // Shift to flip LED1 bit
+    STR  R5, [R3]  //  Turn LED On
+delay_call:
+    BL  delay
+    POP {R5, LR} // POP R5&LR from Stack
+    BX  LR
+    
     END
